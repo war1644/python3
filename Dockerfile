@@ -6,8 +6,7 @@ RUN apk add --no-cache python3 && \
 # pip
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
-    echo "[global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple" > /etc/pip.conf && \
+    echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" > /etc/pip.conf && \
     if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
     if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
     pip install --upgrade pip setuptools && \
